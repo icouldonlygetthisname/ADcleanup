@@ -15,14 +15,13 @@ $colonlessdate = $28dayslater | ForEach-Object { $_ -replace ":|/", "-" }
 $action = New-ScheduledTaskAction -Execute 'Powershell.exe'`
 -Argument '-ExecutionPolicy Unrestricted -WindowStyle Hidden -File C:\Users\someuser\Documents\deleteoldusers.ps1'
 $trigger =  New-ScheduledTaskTrigger -Once -At $28dayslater
-# $Description = "Delete old users from $OU at $colonlessdate" doesn't like varibles in the string 
 $TaskName = "Delete old users at $colonlessdate"
 $Principal = New-ScheduledTaskPrincipal -Id 'Author' `
 -UserId 'Domain\administrator' `
 -LogonType Password `
 -RunLevel Highest
  
-$Task = New-ScheduledTask -Description 'Delete old users from Disable Users OU' ` 
+$Task = New-ScheduledTask -Description 'Delete old users from Disabled Users OU' ` 
 -Action $action `
 -Principal $Principal `
 -Trigger $Trigger
