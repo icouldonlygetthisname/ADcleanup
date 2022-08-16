@@ -2,7 +2,7 @@
 PowerShell Scripts for cleaning up AD 
 The main purpose of these are to find stale AD objects and then move them to an OU then delete them with a schedule task. 
 
-Stage 1 -- Run disablecomputers or user scrtipt manually invokes moving all stale computer objects to an OU then runs another script the delete ones a set ammount of days later to delete to computer or user objects. 
+Stage 1 -- Run disablecomputers or user scrtipt manually invokes moving all stale computer objects to an OU then runs another script a set ammount of days later to delete to computer or user objects. 
 Stage 2 -- Automating steps in Stage 1 so it runs regularly. 
 
 # Currnet work in progress 
