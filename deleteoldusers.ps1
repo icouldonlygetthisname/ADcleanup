@@ -11,7 +11,7 @@ $OU = "OU=Disabled Users,DC=domain,DC=local"
 
 ## End Variables ##
 
-# Get list of users in OU and pipe to a file based of modified date
+# Get list of users in OU and pipe to a file based off modified date
 Get-ADuser -Filter 'Modified -le $date' -SearchBase "$OU" -Properties SamAccountName | Select-Object -ExpandProperty SamAccountName | Out-file -FilePath $path4 -Force
 
 # Delete user objects
